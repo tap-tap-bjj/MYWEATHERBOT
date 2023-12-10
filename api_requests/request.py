@@ -11,7 +11,6 @@ def get_city_coord(city):
     geo = json.loads(r.text)
     return geo['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['Point']['pos']
 
-print(get_city_coord('Калинингард'))
 
 def get_weather(city):
     coordinates = get_city_coord(city).split()
@@ -20,5 +19,3 @@ def get_weather(city):
                      params=payload, headers=api_config.weather_key)
     weather_data = json.loads(r.text)
     return weather_data['fact']
-
-print(get_weather('Калининград'))
