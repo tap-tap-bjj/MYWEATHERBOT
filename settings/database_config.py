@@ -1,1 +1,1 @@
-url = 'postgresql://postgres:enigma12@localhost:5432/postgres'
+url = 'postgresql://postgres:enigma12@db:5432/postgres'

@@ -29,6 +29,11 @@ def delete_user_report(report_id):
     session.delete(report)
     session.commit()
 
+def get_all_users():
+    session = Session()
+    users = session.query(User).all()
+    return users
+
 def get_reports(tg_id):
     session = Session()
     user = session.query(User).filter(User.tg_id == tg_id).first()

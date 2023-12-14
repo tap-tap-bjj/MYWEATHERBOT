@@ -15,7 +15,8 @@ def get_city_coord(city):
 def get_weather(city):
     coordinates = get_city_coord(city).split()
     payload = {'lat': coordinates[1], 'lon': coordinates[0], 'lang': 'ru_RU'}
-    r = requests.get('https://api.weather.yandex.ru/v2/forecast',
+    r = requests.get('https://api.weather.yandex.ru/v2/informers?',
                      params=payload, headers=api_config.weather_key)
     weather_data = json.loads(r.text)
     return weather_data['fact']
+
